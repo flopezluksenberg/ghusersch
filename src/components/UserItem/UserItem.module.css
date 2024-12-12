@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    gap: 8px;
+}
+
+.avatar {
+    position: relative;
+}
+
+.img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+}
+
+.icon {
+    position: absolute;
+    right: 4px;
+    color: #FFF;
+    bottom: 4px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.type {
+    font-weight: 300;
+    font-size: 12px;
+    font-style: italic;
+}

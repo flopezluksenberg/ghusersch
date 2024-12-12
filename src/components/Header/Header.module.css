@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.watermark {
+    box-sizing: content-box;
+    display: flex;
+    height: 24px;
+    padding: 8px 0;
+}
+
+.favorites {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.heart {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+    fill: var(--color-primary);
+}

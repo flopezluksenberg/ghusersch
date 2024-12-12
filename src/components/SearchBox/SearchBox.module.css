@@ -1,3 +1,31 @@
 .container {
+    position: relative;
+    width: 100%;
+}
 
+.icon {
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    display: flex;
+}
+
+.clear {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+}
+
+.input {
+    padding: 12px 36px;
+    border: 1px solid #d5d5e7;
+    outline: none;
+    border-radius: 8px;
+    width: 100%;
+    letter-spacing: -0.5px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+.input:focus {
+    border-color: var(--color-primary);
 }

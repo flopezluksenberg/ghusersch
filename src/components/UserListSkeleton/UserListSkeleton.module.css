@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    padding: 8px 0;
+    border-top: 1px solid rgb(238, 238, 238);
+}
+.item:last-child {
+    border-bottom: 1px solid rgb(238, 238, 238);;
+}
+
+.avatar {
+    flex-shrink: 0;
+    background: #c3c3c3;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.name {
+    background: #c3c3c3;
+    position: relative;
+    overflow: hidden;
+    height: 16px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.avatar::before, .name::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+            to right,
+            rgba(255,255,255,0) 0%,
+            rgba(255,255,255,0.6) 50%,
+            rgba(255,255,255,0) 100%
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
