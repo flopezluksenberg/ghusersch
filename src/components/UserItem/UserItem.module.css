@@ -41,18 +41,15 @@
 
 .link {
     width: 100%;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    overflow: hidden;
 }
 
 .name {
     font-weight: 600;
     font-size: 18px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .favorite {
@@ -90,6 +87,7 @@
     .name {
         font-weight: 600;
         font-size: 24px;
+
     }
 
     .icon {

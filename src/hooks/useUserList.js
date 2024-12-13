@@ -85,6 +85,7 @@ export default function useUserList({ size = 30 } = {}) {
     currentPage,
     isLoading,
     isFirstLoading: isLoading && currentPage === 1,
+    isEmpty: users.length === 0,
     error,
     users,
     hasNextPage,

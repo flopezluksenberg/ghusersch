@@ -1,9 +1,9 @@
-import styles from './ErrorMessage.module.css';
+import styles from './EmptyList.module.css';
 import PlaceholderImage from '../PlaceholderImage/PlaceholderImage';
 
-export default function ErrorMessage({
-  title = 'Algo anda mal :(',
-  description = 'Parece que nuestro sistema no esta funcionando correctamente. Te pedimos que intentes nuevamente en unos minutos',
+export default function EmptyList({
+  title = 'No se encontraron elementos',
+  description = 'Al parecer no hay elementos que coincidan con tu búsqueda.',
 }) {
   return (
     <div className={styles.container}>
@@ -11,8 +11,8 @@ export default function ErrorMessage({
       <p className={styles.description}>{description}</p>
       <PlaceholderImage
         className={styles.img}
-        src={'/error.webp'}
-        alt={'Errores'}
+        src={'/empty.webp'}
+        alt={'Sin elementos'}
       />
     </div>
   );

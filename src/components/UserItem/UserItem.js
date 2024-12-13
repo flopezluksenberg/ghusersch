@@ -35,9 +35,7 @@ export default function UserItem({
             <TypeIcon className={styles.icon} width={18} height={18} />
           </div>
 
-          <div className={styles.content}>
-            <p className={styles.name}>{name}</p>
-          </div>
+          <p className={styles.name}>{name}</p>
         </div>
       </Link>
 

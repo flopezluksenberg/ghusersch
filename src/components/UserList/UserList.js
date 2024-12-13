@@ -4,12 +4,14 @@ import useUserList from '../../hooks/useUserList';
 import UserListSkeleton from '../UserListSkeleton/UserListSkeleton';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import SearchBox from '../SearchBox/SearchBox';
+import EmptyList from '../EmptyList/EmptyList';
 
 export default function UserList() {
   const {
     error,
     isLoading,
     isFirstLoading,
+    isEmpty,
     users,
     hasNextPage,
     query,
@@ -35,18 +37,20 @@ export default function UserList() {
       {!error && !isFirstLoading && (
         <>
           <div className={styles.content}>
-            {users.map((user, index) => (
-              <div className={styles.item} key={index}>
-                <UserItem
-                  id={user.id}
-                  name={user.login}
-                  type={user.type}
-                  img={user.avatar_url}
-                  isFavorite={user.is_favorite}
-                  onMarkAsFavoriteClick={() => onMarkAsFavoriteClick(user.id)}
-                />
-              </div>
-            ))}
+            {isEmpty && <EmptyList />}
+            {!isEmpty &&
+              users.map((user, index) => (
+                <div className={styles.item} key={index}>
+                  <UserItem
+                    id={user.id}
+                    name={user.login}
+                    type={user.type}
+                    img={user.avatar_url}
+                    isFavorite={user.is_favorite}
+                    onMarkAsFavoriteClick={() => onMarkAsFavoriteClick(user.id)}
+                  />
+                </div>
+              ))}
           </div>
 
           {hasNextPage && (

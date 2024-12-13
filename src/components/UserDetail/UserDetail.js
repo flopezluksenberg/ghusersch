@@ -64,7 +64,7 @@ export default function UserDetail({
       </div>
       <div className={styles.content}>
         <div className={styles['name-container']}>
-          <p className={styles.name}>{name}</p>
+          <p className={styles.name}>{name || username}</p>
           <p className={styles.username}>@{username}</p>
         </div>
         {biography && <div className={styles.bio}>{biography}</div>}
@@ -76,12 +76,10 @@ export default function UserDetail({
             text={`Se unió el ${CalendarUtils.formatDate(createdAt)}`}
             icon={CalendarIcon}
           />
-          {repositories && (
-            <UserDetailItem
-              text={`Tiene ${repositories} repositorios`}
-              icon={RepositoryIcon}
-            />
-          )}
+          <UserDetailItem
+            text={`Tiene ${repositories || 0} repositorios públicos`}
+            icon={RepositoryIcon}
+          />
         </div>
         <div className={styles.follows}>
           <p className={styles['follow-item']}>
