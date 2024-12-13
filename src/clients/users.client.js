@@ -32,4 +32,17 @@ export default class UsersClient {
 
     return items;
   }
+
+  static async getUser({ name }) {
+    const url = `${UsersClient.BaseUrl}/users/${name}`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(
+        `Something went wrong fetching user detail: ${response.statusText}`,
+      );
+    }
+
+    return await response.json();
+  }
 }

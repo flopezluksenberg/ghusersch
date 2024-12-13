@@ -1,7 +1,8 @@
 import styles from './Header.module.css';
 import HeartIcon from '../Icon/HeartIcon';
 import { useFavorites } from '../../hooks/useFavorites';
-import PlaceholderImage from '../PlaceholderImage/PlaceholderImage';
+import Link from 'next/link';
+import WatermarkIcon from '../Icon/WatermarkIcon';
 
 export default function Header() {
   const { favorites, isLoading } = useFavorites();
@@ -9,11 +10,10 @@ export default function Header() {
   return (
     <header className={styles.container}>
       <div className={styles.content}>
-        <PlaceholderImage
-          className={styles.watermark}
-          src={'/watermark.webp'}
-          alt={'Fravega'}
-        />
+        <Link className={styles.link} href="/">
+          <WatermarkIcon className={styles.watermark} />
+        </Link>
+
         <div className={styles.favorites}>
           <HeartIcon className={styles.heart} />
 

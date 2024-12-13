@@ -1,0 +1,142 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    align-items: center;
+    max-width: 791px;
+    align-self: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    max-width: 375px;
+}
+
+.avatar {
+    position: relative;
+    padding: 16px;
+    align-self: center;
+}
+
+.placeholder {
+    color: var(--color-primary);
+    width: 120px;
+    height: 120px;
+}
+
+.img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+}
+
+
+.favorite {
+    background: none;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 2;
+
+}
+
+.heart {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+    fill: none;
+    cursor: pointer;
+}
+
+.heart--is-favorite {
+    fill: var(--color-primary);
+}
+
+.name-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.name {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    line-height: 1.15;
+}
+
+.username {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.bio {
+    margin: 16px 0;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.follows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.follow-item {
+    padding: 8px;
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    line-height: 1.15;
+    width: 50%;
+}
+
+.follow-number {
+    font-weight: 600;
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        gap: 32px;
+    }
+    .content {
+        justify-content: center;
+    }
+
+    .img {
+        width: 320px;
+        height: 320px;
+    }
+
+    .heart {
+        width: 48px;
+        height: 48px;
+    }
+
+    .name {
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    .username {
+        font-size: 16px;
+        font-weight: 300;
+    }
+}

@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    gap: 8px;
+    width: 100%;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 300;
+}

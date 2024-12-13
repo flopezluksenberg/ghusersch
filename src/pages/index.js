@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Fravega Challenge" />
+        <title>Lista de usuarios | Fravega</title>
+        <meta name="description" content="Lista de usuarios | Fravega" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -17,7 +17,9 @@
     gap: 8px;
     max-width: 1280px;
 }
-
+.link {
+    -webkit-tap-highlight-color: transparent;
+}
 .watermark {
     box-sizing: content-box;
     display: flex;

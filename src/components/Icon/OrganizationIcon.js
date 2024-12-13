@@ -1,8 +1,14 @@
-const OrganizationIcon = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" {...props}>
+const OrganizationIcon = ({ width = 24, height = 24, ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width}
+    height={height}
+    viewBox="0 0 24 24"
+    {...props}
+  >
     <path
       fill="currentColor"
-      d="M4 3v26h11v-4h2v4h11V3zm2 2h20v22h-7v-4h-6v4H6zm2 2v2h4V7zm6 0v2h4V7zm6 0v2h4V7zM8 11v2h4v-2zm6 0v2h4v-2zm6 0v2h4v-2zM8 15v2h4v-2zm6 0v2h4v-2zm6 0v2h4v-2zM8 19v2h4v-2zm6 0v2h4v-2zm6 0v2h4v-2zM8 23v2h4v-2zm12 0v2h4v-2z"
+      d="m12 .856 10 5.556V9H2V6.412zM2 21h20v2H2zm5-2H5v-8h2zm6 0h-2v-8h2zm6 0h-2v-8h2z"
     />
   </svg>
 );

@@ -1,16 +1,12 @@
 import styles from './Footer.module.css';
-import PlaceholderImage from '../PlaceholderImage/PlaceholderImage';
+import WatermarkIcon from '../Icon/WatermarkIcon';
 
 export default function Footer() {
   return (
     <footer className={styles.container}>
       <div className={styles.content}>
         <div className={styles['watermark-container']}>
-          <PlaceholderImage
-            className={styles.watermark}
-            src={'/watermark.webp'}
-            alt={'Fravega'}
-          />
+          <WatermarkIcon className={styles.watermark} />
         </div>
         <div className={styles.support}>
           <p className={styles['footer-line']}>Atención al cliente:</p>

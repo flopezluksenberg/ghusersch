@@ -5,6 +5,7 @@ import Button from '../Button/Button';
 import UserListSkeleton from '../UserListSkeleton/UserListSkeleton';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import SearchBox from '../SearchBox/SearchBox';
+import Link from 'next/link';
 
 export default function UserList() {
   const {
@@ -45,7 +46,7 @@ export default function UserList() {
                   type={user.type}
                   img={user.avatar_url}
                   isFavorite={user.is_favorite}
-                  onMarkAsFavoriteClick={onMarkAsFavoriteClick}
+                  onMarkAsFavoriteClick={() => onMarkAsFavoriteClick(user.id)}
                 />
               </div>
             ))}

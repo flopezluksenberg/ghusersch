@@ -3,11 +3,8 @@ import OrganizationIcon from '../Icon/OrganizationIcon';
 import UserIcon from '../Icon/UserIcon';
 import HeartIcon from '../Icon/HeartIcon';
 import PlaceholderImage from '../PlaceholderImage/PlaceholderImage';
-
-const UserType = {
-  USER: 'User',
-  ORGANIZATION: 'Organization',
-};
+import Link from 'next/link';
+import { UserType } from '../../constants/user-type.constant';
 
 const UserTypeIcon = {
   [UserType.ORGANIZATION]: OrganizationIcon,
@@ -26,25 +23,30 @@ export default function UserItem({
 
   return (
     <div className={styles.container}>
-      <div className={styles.data}>
-        <div className={styles.avatar}>
-          <PlaceholderImage
-            className={styles.img}
-            src={img}
-            alt={name}
-            placeholder={() => <UserIcon className={styles.placeholder} />}
-          />
-          <TypeIcon className={styles.icon} width={18} height={18} />
-        </div>
+      <Link className={styles.link} href={`/user/${name}`}>
+        <div className={styles.data}>
+          <div className={styles.avatar}>
+            <PlaceholderImage
+              className={styles.img}
+              src={img}
+              alt={name}
+              placeholder={() => <UserIcon className={styles.placeholder} />}
+            />
+            <TypeIcon className={styles.icon} width={18} height={18} />
+          </div>
 
-        <div className={styles.content}>
-          <p className={styles.name}>{name}</p>
+          <div className={styles.content}>
+            <p className={styles.name}>{name}</p>
+          </div>
         </div>
-      </div>
+      </Link>
 
       <button
         className={styles.favorite}
-        onClick={() => onMarkAsFavoriteClick(id)}
+        onClick={(e) => {
+          e.stopPropagation();
+          onMarkAsFavoriteClick(id);
+        }}
       >
         <HeartIcon
           className={`${styles.heart} ${isFavorite ? styles['heart--is-favorite'] : ''}`}
