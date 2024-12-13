@@ -5,11 +5,11 @@
 Este repositorio contiene la solución para listar usuarios de Github, explorar sus detalles, marcarlos como favoritos y realizar búsquedas de manera eficiente utilizando la API de Github Users.
 
 ### Demo Mobile
-![Mobile Video](https://raw.githubusercontent.com/flopezluksenbrg/ghusersch/main/files/desktop.gif)
+![Mobile Video](https://raw.githubusercontent.com/flopezluksenberg/ghusersch/refs/heads/main/files/mobile.gif)
 
 
 ### Demo Desktop
-![Desktop Video](https://raw.githubusercontent.com/flopezluksenbrg/ghusersch/main/files/mobile.gif)
+![Desktop Video](https://raw.githubusercontent.com/flopezluksenberg/ghusersch/refs/heads/main/files/desktop.gif)
 
 
 
