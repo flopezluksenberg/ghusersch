@@ -70,3 +70,8 @@ Este repositorio contiene la solución para listar usuarios de Github, explorar 
 
 ---
 
+## 🌟 Puntos para mejorar
+- **Unit Tests:** Haciendo uso de `@testing-library/react` se podria implementar unit testing sobre componentes visuales y hook. 
+- **UI Testing:** Si quisieramos mejorar el flujo de trabajo, podriamos incluir testing de ui usando herramientas como selenium, cypress o playwright. 
+
+---
