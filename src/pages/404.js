@@ -2,13 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Error404.module.css';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-import { Work_Sans } from 'next/font/google';
 import ErrorMessage from '../components/ErrorMessage/ErrorMessage';
-
-const workSans = Work_Sans({
-  variable: '--work-sans',
-  subsets: ['latin'],
-});
 
 export default function Error404() {
   return (
@@ -20,7 +14,7 @@ export default function Error404() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={`${styles.container} ${workSans.variable}`}>
+      <div className={styles.container}>
         <Header />
         <div className={`${styles.content}`}>
           <ErrorMessage

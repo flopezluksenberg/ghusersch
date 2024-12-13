@@ -1,15 +1,9 @@
 import Head from 'next/head';
-import { Work_Sans } from 'next/font/google';
 import styles from '../../styles/UserDetailPage.module.css';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import UsersClient from '../../clients/users.client';
 import UserDetail from '../../components/UserDetail/UserDetail';
-
-const workSans = Work_Sans({
-  variable: '--work-sans',
-  subsets: ['latin'],
-});
 
 export default function UserDetailPage({ user }) {
   return (
@@ -20,7 +14,7 @@ export default function UserDetailPage({ user }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={`${styles.container} ${workSans.variable}`}>
+      <div className={styles.container}>
         <Header />
         <div className={styles.content}>
           <p className={styles.title}>Detalle de usuario</p>

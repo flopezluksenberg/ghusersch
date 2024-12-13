@@ -1,14 +1,8 @@
 import Head from 'next/head';
-import { Work_Sans } from 'next/font/google';
 import styles from '../styles/HomePage.module.css';
 import UserList from '../components/UserList/UserList';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-
-const workSans = Work_Sans({
-  variable: '--work-sans',
-  subsets: ['latin'],
-});
 
 export default function HomePage() {
   return (
@@ -20,7 +14,7 @@ export default function HomePage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={`${styles.container} ${workSans.variable}`}>
+      <div className={styles.container}>
         <Header />
         <div className={`${styles.content}`}>
           <p className={styles.title}>Lista de usuarios</p>
