@@ -23,7 +23,7 @@ export default function UserItem({
 
   return (
     <div className={styles.container}>
-      <Link className={styles.link} href={`/user/${name}`}>
+      <Link className={styles.link} href={`/users/${name}`}>
         <div className={styles.data}>
           <div className={styles.avatar}>
             <PlaceholderImage

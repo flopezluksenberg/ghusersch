@@ -1,7 +1,6 @@
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Work_Sans } from 'next/font/google';
-import styles from '../../styles/UserDetail.module.css';
+import styles from '../../styles/UserDetailPage.module.css';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import UsersClient from '../../clients/users.client';
@@ -16,8 +15,8 @@ export default function UserDetailPage({ user }) {
   return (
     <>
       <Head>
-        <title>{user.login} | Fravega</title>
-        <meta name="description" content={`${user.login} | Fravega`} />
+        <title>{user.name} | Fravega</title>
+        <meta name="description" content={`${user.name} | Fravega`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -1,4 +1,5 @@
 import styles from './ErrorMessage.module.css';
+
 export default function ErrorMessage({
   title = 'Algo anda mal :(',
   description = 'Parece que nuestro sistema no esta funcionando correctamente. Te pedimos que intentes nuevamente en unos minutos',

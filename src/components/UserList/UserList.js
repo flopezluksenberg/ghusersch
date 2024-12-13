@@ -1,11 +1,9 @@
 import styles from './UserList.module.css';
 import UserItem from '../UserItem/UserItem';
 import useUserList from '../../hooks/useUserList';
-import Button from '../Button/Button';
 import UserListSkeleton from '../UserListSkeleton/UserListSkeleton';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import SearchBox from '../SearchBox/SearchBox';
-import Link from 'next/link';
 
 export default function UserList() {
   const {
@@ -32,7 +30,6 @@ export default function UserList() {
           onClear={() => setQuery('')}
         />
       </div>
-      <p className={styles.title}>Lista de usuarios</p>
       {!!error && <ErrorMessage />}
       {!error && isFirstLoading && <UserListSkeleton />}
       {!error && !isFirstLoading && (
@@ -53,13 +50,13 @@ export default function UserList() {
           </div>
 
           {hasNextPage && (
-            <Button
+            <button
               className={styles.button}
               disabled={isLoading}
               onClick={onNextPage}
             >
               Cargar más
-            </Button>
+            </button>
           )}
         </>
       )}

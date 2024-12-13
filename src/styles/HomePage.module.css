@@ -8,11 +8,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    margin: 16px 0;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+    line-height: 1.15;
 }
 
 
 @media (min-width: 768px) {
     .content {
         margin-top: 64px;
+    }
+
+    .title {
+        margin: 0;
+        font-size: 48px;
     }
 }

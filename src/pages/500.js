@@ -1,21 +1,21 @@
 import Head from 'next/head';
-import { Work_Sans } from 'next/font/google';
-import styles from '../styles/HomePage.module.css';
-import UserList from '../components/UserList/UserList';
+import styles from '../styles/Error500.module.css';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import { Work_Sans } from 'next/font/google';
+import ErrorMessage from '../components/ErrorMessage/ErrorMessage';
 
 const workSans = Work_Sans({
   variable: '--work-sans',
   subsets: ['latin'],
 });
 
-export default function HomePage() {
+export default function Error500() {
   return (
     <>
       <Head>
-        <title>Lista de usuarios | Fravega</title>
-        <meta name="description" content="Lista de usuarios | Fravega" />
+        <title>Algo salió mal | Fravega</title>
+        <meta name="description" content="Algo salió mal | Fravega" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -23,8 +23,12 @@ export default function HomePage() {
       <div className={`${styles.container} ${workSans.variable}`}>
         <Header />
         <div className={`${styles.content}`}>
-          <p className={styles.title}>Lista de usuarios</p>
-          <UserList />
+          <ErrorMessage
+            title={'Algo salió mal'}
+            description={
+              'En estos momentos estamos teniendo dificultades técnicas. Por favor, espere unos minutos e intentelo nuevamente'
+            }
+          />
         </div>
         <Footer />
       </div>

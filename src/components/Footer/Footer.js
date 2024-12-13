@@ -1,13 +1,14 @@
 import styles from './Footer.module.css';
 import WatermarkIcon from '../Icon/WatermarkIcon';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
     <footer className={styles.container}>
       <div className={styles.content}>
-        <div className={styles['watermark-container']}>
+        <Link href={'/'} className={styles['watermark-container']}>
           <WatermarkIcon className={styles.watermark} />
-        </div>
+        </Link>
         <div className={styles.support}>
           <p className={styles['footer-line']}>Atención al cliente:</p>
           <div className={styles['support-content']}>
