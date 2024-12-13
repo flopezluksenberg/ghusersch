@@ -20,6 +20,7 @@ Este repositorio contiene la solución para listar usuarios de Github, explorar 
 - Tener instalado **Node.js** version **21** en adelante y **npm** version **10** en adelante. Recomiendo usar nvm para gestionar las versiones. 
 - Opcional: Tener **Docker** y **Docker Compose** para el despliegue con contenedores.
 
+Nota: Tener en cuenta que la api de github tiene un rate limit para requests no autenticados. Esto significa que si se hacen muchos requests en poco tiempo, el servicio devolvera 403 y deberas esperar un tiempo para poder volver a usar la web app (se verá una pantalla que dice "Algo salió mal :(")
 
 ### 🐳 Ejecución con Docker
 
