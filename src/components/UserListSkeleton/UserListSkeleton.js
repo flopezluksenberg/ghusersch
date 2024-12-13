@@ -1,6 +1,6 @@
 import styles from './UserListSkeleton.module.css';
 
-const ItemSize = 10;
+const ItemSize = 45;
 
 export default function UserListSkeleton() {
   return (

@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid rgb(238, 238, 238);
+    padding: 64px 0;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    width: 100%;
+}
+.watermark-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.watermark {
+    box-sizing: content-box;
+    display: flex;
+    height: 20px;
+    padding: 8px 0;
+}
+.support {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.support-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.emails {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.sales {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.calendar {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-line {
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+.footer-line--bold {
+    font-weight: 600;
+    padding: 0;
+}
+.footer-line--light {
+    font-weight: 300;
+    padding: 0;
+}
+
+
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        max-width: 1280px;
+    }
+
+    .watermark {
+        height: 24px;
+    }
+
+    .footer-line {
+        font-size: 15px;
+        letter-spacing: -0.3px;
+        line-height: 1.15;
+    }
+}

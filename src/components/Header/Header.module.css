@@ -1,7 +1,21 @@
 .container {
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+.content {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    padding: 8px 16px;
+    gap: 8px;
+    max-width: 1280px;
 }
 
 .watermark {
@@ -23,3 +37,15 @@
     color: var(--color-primary);
     fill: var(--color-primary);
 }
+
+
+.number {
+    font-size: 14px;
+    transition: all 0.3s ease;
+    min-width: 14px;
+}
+
+.number--is-loading {
+    filter: blur(4px);
+}
+

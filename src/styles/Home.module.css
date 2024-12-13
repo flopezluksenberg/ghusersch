@@ -2,18 +2,17 @@
     display: flex;
     flex-direction: column;
 }
-.search {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    background: #fff;
-    z-index: 1;
-    border-bottom: 1px solid rgb(238, 238, 238);
-    padding: 8px 16px;
-    width: 100%;
-    gap: 8px;
-}
 
 .content {
-    margin-top: 108px;
+    margin-top: 118px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (min-width: 768px) {
+    .content {
+        margin-top: 64px;
+    }
 }

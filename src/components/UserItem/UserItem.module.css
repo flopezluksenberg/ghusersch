@@ -1,6 +1,7 @@
 .container {
     display: flex;
     gap: 8px;
+    justify-content: space-between;
 }
 
 .avatar {
@@ -22,6 +23,20 @@
     background-color: var(--color-primary);
     border-radius: 50%;
     padding: 4px;
+    z-index: 1;
+}
+
+.placeholder {
+    color: var(--color-primary);
+    width: 32px;
+    height: 32px;
+}
+
+.data {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
 }
 
 .content {
@@ -36,8 +51,45 @@
     font-size: 18px;
 }
 
-.type {
-    font-weight: 300;
-    font-size: 12px;
-    font-style: italic;
+.favorite {
+    background: none;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.heart {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+    fill: none;
+}
+
+.heart--is-favorite {
+    fill: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+    .container {
+        gap: 16px;
+    }
+
+    .img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .name {
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
 }
