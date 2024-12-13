@@ -1,7 +1,4 @@
-import {
-  LocalStorageProvider,
-  useLocalStorage,
-} from '../contexts/local-storage.context';
+import { useLocalStorage } from '../contexts/local-storage.context';
 import { useEffect, useState } from 'react';
 
 const FAVORITES_KEY = 'favorites';
@@ -13,7 +10,7 @@ export function useFavorites() {
 
   useEffect(() => {
     try {
-      const favorites = getItem(LocalStorageProvider.Keys.FAVORITES) || [];
+      const favorites = JSON.parse(getItem(FAVORITES_KEY)) || [];
       setFavorites(favorites);
     } catch (error) {
       setFavorites([]);
@@ -23,20 +20,20 @@ export function useFavorites() {
   }, [storageData]);
 
   function addFavorite(id) {
-    const currentFavorites = getItem(FAVORITES_KEY) || [];
+    const currentFavorites = JSON.parse(getItem(FAVORITES_KEY)) || [];
     if (!currentFavorites.includes(id)) {
-      setItem(FAVORITES_KEY, [...currentFavorites, id]);
+      setItem(FAVORITES_KEY, JSON.stringify([...currentFavorites, id]));
     }
   }
 
   function removeFavorite(id) {
-    const currentFavorites = getItem(FAVORITES_KEY) || [];
+    const currentFavorites = JSON.parse(getItem(FAVORITES_KEY)) || [];
     const updatedFavorites = currentFavorites.filter((favId) => favId !== id);
-    setItem(FAVORITES_KEY, updatedFavorites);
+    setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));
   }
 
   function toggleFavorite(id) {
-    const currentFavorites = getItem(FAVORITES_KEY) || [];
+    const currentFavorites = JSON.parse(getItem(FAVORITES_KEY)) || [];
     if (currentFavorites.includes(id)) {
       removeFavorite(id);
     } else {
@@ -45,7 +42,7 @@ export function useFavorites() {
   }
 
   function isFavorite(id) {
-    const currentFavorites = getItem(FAVORITES_KEY) || [];
+    const currentFavorites = JSON.parse(getItem(FAVORITES_KEY)) || [];
     return currentFavorites.includes(id);
   }
 

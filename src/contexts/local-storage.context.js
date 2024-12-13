@@ -2,22 +2,12 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const LocalStorageContext = createContext({});
 
-const Keys = {
-  FAVORITES: 'favorites',
-};
-
 export function LocalStorageProvider({ children }) {
   const [storageData, setStorageData] = useState({});
 
   function getItem(key) {
     if (typeof window !== 'undefined') {
-      const item = localStorage.getItem(key);
-      try {
-        return item ? JSON.parse(item) : null;
-      } catch (error) {
-        console.error('Error parsing local storage json:', error);
-        return null;
-      }
+      return localStorage.getItem(key);
     }
     return null;
   }
@@ -25,23 +15,30 @@ export function LocalStorageProvider({ children }) {
   function setItem(key, value) {
     if (typeof window !== 'undefined') {
       try {
-        const valueString = JSON.stringify(value);
+        const valueString =
+          typeof value === 'string' ? value : JSON.stringify(value);
         localStorage.setItem(key, valueString);
         setStorageData((prev) => ({ ...prev, [key]: value }));
       } catch (error) {
-        console.error('Error saving local storage json:', error);
+        console.error('Error saving to local storage:', error);
       }
     }
   }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const data = getItem(Keys.FAVORITES);
+      const keys = Object.keys(localStorage);
+      const data = keys.reduce((acc, key) => {
+        const value = localStorage.getItem(key);
+        try {
+          acc[key] = JSON.parse(value);
+        } catch {
+          acc[key] = value;
+        }
+        return acc;
+      }, {});
 
-      setStorageData((prev) => ({
-        ...prev,
-        [Keys.FAVORITES]: data,
-      }));
+      setStorageData(data);
     }
   }, []);
 
@@ -51,8 +48,6 @@ export function LocalStorageProvider({ children }) {
     </LocalStorageContext.Provider>
   );
 }
-
-LocalStorageProvider.Keys = Keys;
 
 export function useLocalStorage() {
   return useContext(LocalStorageContext);
