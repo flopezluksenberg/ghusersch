@@ -15,7 +15,9 @@ export default function Header() {
         </Link>
 
         <div className={styles.favorites}>
-          <HeartIcon className={styles.heart} />
+          <HeartIcon
+            className={`${styles.heart} ${favorites.length > 0 ? styles['heart--filled'] : ''}`}
+          />
           <p
             className={`${styles.number} ${isLoading ? styles['number--is-loading'] : ''}`}
           >

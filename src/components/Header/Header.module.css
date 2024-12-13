@@ -38,6 +38,11 @@
     width: 24px;
     height: 24px;
     color: var(--color-primary);
+    fill: transparent;
+}
+
+
+.heart--filled {
     fill: var(--color-primary);
 }
 
