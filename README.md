@@ -17,10 +17,20 @@ Este repositorio contiene la solución para listar usuarios de Github, explorar 
 
 ### 📋 Requisitos previos
 
-- Tener instalado **Node.js** y **npm**.
+- Tener instalado **Node.js** version **21** en adelante y **npm** version **10** en adelante. Recomiendo usar nvm para gestionar las versiones. 
 - Opcional: Tener **Docker** y **Docker Compose** para el despliegue con contenedores.
 
-### 💻 Ejecución en modo local
+
+### 🐳 Ejecución con Docker
+
+1. Construye y levanta el contenedor:
+   ```bash
+   docker-compose up -d
+   ```
+   **Nota:** La primera ejecución puede tardar porque se construye la imagen Docker.
+2. Accede a la aplicación en `http://localhost:3000`.
+
+### 💻 Ejecución local con servidor de desarrollo
 
 1. Instala las dependencias:
    ```bash
@@ -32,14 +42,22 @@ Este repositorio contiene la solución para listar usuarios de Github, explorar 
    ```
 3. Accede a la aplicación en tu navegador en `http://localhost:3000`.
 
-### 🐳 Ejecución con Docker
+### 💻 Ejecución local en modo productivo
 
-1. Construye y levanta el contenedor:
+1. Instala las dependencias:
    ```bash
-   docker-compose up -d
+   npm install
    ```
-   **Nota:** La primera ejecución puede tardar porque se construye la imagen Docker.
-2. Accede a la aplicación en `http://localhost:3000`.
+2. Buildea la app
+   ```bash
+   npm run build
+   ```
+3. Inicializa el servicio
+   ```bash
+   npm run start
+   ```
+4. Accede a la aplicación en tu navegador en `http://localhost:3000`.
+
 
 ### 🌐 Variables de entorno
 
@@ -64,8 +82,8 @@ Este repositorio contiene la solución para listar usuarios de Github, explorar 
 - **404 personalizada:** Para rutas inexistentes.
 - **500 personalizada:** Para errores internos.
 - **Pantallas "Empty" y "Algo anda mal":** Mejoran la UX en caso de búsquedas sin resultados o errores.
-
 - Las solicitudes a `https://api.github.com/` se proxean através de `<app domain>/api/...`. Esto permite evitar eventualmente problemas de CORS y centralizar las solicitudes en el backend. En estos momoentos al solo haber GETs no iban a haber problemas, pero al hacer esto vamos a cubrir otros métodos http
+- El Dockerfile esta utilizando los stages builder y runner, lo que implica imagenes finales mas pequeñas y tiempos de building mas rapidos entre otros beneficios.
 
 
 ---

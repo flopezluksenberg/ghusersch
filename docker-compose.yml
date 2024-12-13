@@ -2,6 +2,7 @@ services:
   fravega-challenge:
     build: .
     image: fravega-challenge:latest
+    container_name: 'fravega-challenge'
     environment:
       DOMAIN_URL: "http://localhost:3000"
     ports:
